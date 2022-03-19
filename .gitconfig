@@ -1,0 +1,33 @@
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	email = rafaelcgstz@gmail.com
+	name = Rafael Corrêa Gomes
+[core]
+	excludesfile = /Users/rafael/.gitignore_global
+	autocrlf = input
+	repositoryformatversion = 0
+	fileMode = false
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+	symlinks = false
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/rafaelgomes/.stCommitMsg
+[includeIf "gitdir:~/sites/gh/"]
+	path = ~/sites/gh/.gitconfig
+[fetch]
+	prune = true

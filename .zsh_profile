@@ -1,0 +1,54 @@
+#alias mysql="/Applications/MAMP/Library/bin/mysql"
+#alias php7="/Applications/MAMP/bin/php/php7.0.20/bin/php"
+#alias php5="/Applications/MAMP/bin/php/php5.6.30/bin/php"
+#alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl https://ipinfo.io/ip"
+alias weather='curl v2.wttr.in'
+alias localip="ipconfig getifaddr en0"
+alias reload="source ~/.zshrc"
+alias allalias="alias | grep"
+alias n98="magerun2"
+alias composer="php -d memory_limit=-1 $(which composer)"
+
+plugins=(
+    git
+    git-flow 
+    git-flow-avh
+    git-extras 
+    git-open 
+    composer 
+    vundle 
+    terminitor
+    nvm 
+    docker
+    docker-compose
+    extract 
+    heroku
+    jira
+    #wakatime 
+    web-search 
+    zsh-autosuggestions 
+    zsh-syntax-highlighting
+    dotenv
+    bgnotify
+    #zsh-autocomplete
+)
+
+#source /Users/rafael/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Configure Default PATH
+# Ensure user-installed binaries take precedence over anything else in the path
+#export PATH="$LOCALBIN:/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="/usr/local/bin/php:$PATH"
+
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+#source ~/.git-flow-completion.zsh
+
+export PATH=$PATH:$HOME/.magento-cloud/bin
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "~/.zsh_private" ] && source "~/.zsh_private" # Private keys and configs
